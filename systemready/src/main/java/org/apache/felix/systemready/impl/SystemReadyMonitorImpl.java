@@ -142,7 +142,9 @@ public class SystemReadyMonitorImpl implements SystemReadyMonitor {
             };
             sreg = context.registerService(SystemReady.class, readyService, null);
         } else {
+        	if (sreg != null) {
             sreg.unregister();
+        	}
         }
     }
 
